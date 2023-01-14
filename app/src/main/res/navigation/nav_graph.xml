@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/featuresFragment">
+
+    <fragment
+        android:id="@+id/featuresFragment"
+        android:name="ru.hse.miem.configurator.FeaturesFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_features">
+
+        <action
+            android:id="@+id/action_featuresFragment_to_parametersFragment"
+            app:destination="@id/parametersFragment" />
+        <action
+            android:id="@+id/action_featuresFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/parametersFragment"
+        android:name="ru.hse.miem.configurator.ParametersFragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fragment_parameters">
+
+        <action
+            android:id="@+id/action_parametersFragment_to_featuresFragment"
+            app:destination="@id/featuresFragment" />
+        <action
+            android:id="@+id/action_parametersFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="ru.hse.miem.configurator.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" >
+        <action
+            android:id="@+id/action_settingsFragment_to_featuresFragment"
+            app:destination="@id/featuresFragment" />
+        <action
+            android:id="@+id/action_settingsFragment_to_parametersFragment"
+            app:destination="@id/parametersFragment" />
+    </fragment>
+</navigation>
